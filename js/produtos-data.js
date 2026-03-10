@@ -149,10 +149,10 @@ const products = {
         category: "Masculino",
         collection: "Original VANT",
         images: [
-            "Assets/img/roupas/OriginalVANT/VantMythos/CamisaVantMythos.png",
-            "Assets/img/roupas/OriginalVANT/VantMythos/CamisaVantMythosDeCostas.png",
-            "Assets/img/roupas/OriginalVANT/VantMythos/CamisaVantMythos3.png",
-            "Assets/img/roupas/OriginalVANT/VantMythos/CamisaVantMythos4.png"
+            "Assets/img/roupas/OriginalVANT/VantMythos/CamisaVANTMythos.png",
+            "Assets/img/roupas/OriginalVANT/VantMythos/CamisaVANTMythosDeCostas.png",
+            "Assets/img/roupas/OriginalVANT/VantMythos/CamisaVANTMythos3.png",
+            "Assets/img/roupas/OriginalVANT/VantMythos/CamisaVANTMythos4.png"
         ],
         description: "Peça exclusiva da linha Original VANT. Com estampa que funde a estética da mitologia grega a elementos tropicais e a imponência do tigre real. Confeccionada em tecido premium de caimento fluido."
     },
