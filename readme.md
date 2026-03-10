@@ -1,6 +1,6 @@
 # VANT | E-commerce Concept
 
-![VANT Banner](Assets/img/vant.png)
+![VANT](Assets/img/vant.png)
 
 > Minimalist Streetwear Store. Focada em uma experiência de usuário fluida, estética "high-end" e performance visual.
 
