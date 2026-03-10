@@ -32,10 +32,10 @@ const products = {
         category: "Feminino",
         collection: "Vibe Tropical",
         images: [
-            "Assets/img/roupas/VibeTropical/SwimVcay/SwimVcay.png", 
-            "Assets/img/roupas/VibeTropical/SwimVcay/SwimVcayDeCostas.png",
-            "Assets/img/roupas/VibeTropical/SwimVcay/SwimVcay3.png",
-            "Assets/img/roupas/VibeTropical/SwimVcay/SwimVcay4.png"
+            "Assets/img/roupas/VibeTropical/SwimVcay/SwimVcay.PNG", 
+            "Assets/img/roupas/VibeTropical/SwimVcay/SwimVcayDeCostas.PNG",
+            "Assets/img/roupas/VibeTropical/SwimVcay/SwimVcay3.PNG",
+            "Assets/img/roupas/VibeTropical/SwimVcay/SwimVcay4.PNG"
         ],
         description: "Vestido curto azul com estampa floral, confeccionado em tecido fluido."
     },
@@ -149,10 +149,10 @@ const products = {
         category: "Masculino",
         collection: "Original VANT",
         images: [
-            "Assets/img/roupas/OriginalVANT/VantMythos/CamisaVantMythos.png",
-            "Assets/img/roupas/OriginalVANT/VantMythos/CamisaVantMythosDeCostas.png",
-            "Assets/img/roupas/OriginalVANT/VantMythos/CamisaVantMythos3.png",
-            "Assets/img/roupas/OriginalVANT/VantMythos/CamisaVantMythos4.png"
+            "Assets/img/roupas/OriginalVANT/VantMythos/CamisaVantMythos.PNG",
+            "Assets/img/roupas/OriginalVANT/VantMythos/CamisaVantMythosDeCostas.PNG",
+            "Assets/img/roupas/OriginalVANT/VantMythos/CamisaVantMythos3.PNG",
+            "Assets/img/roupas/OriginalVANT/VantMythos/CamisaVantMythos4.PNG"
         ],
         description: "Peça exclusiva da linha Original VANT. Com estampa que funde a estética da mitologia grega a elementos tropicais e a imponência do tigre real. Confeccionada em tecido premium de caimento fluido."
     },
@@ -162,10 +162,10 @@ const products = {
         category: "Masculino",
         collection: "Original VANT",
         images: [
-            "Assets/img/roupas/OriginalVANT/KnitFloral/KnitFloral1.png",
-            "Assets/img/roupas/OriginalVANT/KnitFloral/KnitFloral2.png",
-            "Assets/img/roupas/OriginalVANT/KnitFloral/KnitFloral3.png",
-            "Assets/img/roupas/OriginalVANT/KnitFloral/KnitFloral4.png"
+            "Assets/img/roupas/OriginalVANT/KnitFloral/KnitFloral1.PNG",
+            "Assets/img/roupas/OriginalVANT/KnitFloral/KnitFloral2.PNG",
+            "Assets/img/roupas/OriginalVANT/KnitFloral/KnitFloral3.PNG",
+            "Assets/img/roupas/OriginalVANT/KnitFloral/KnitFloral4.PNG"
         ],
         description: "Peça exclusiva da linha Original VANT. Desenvolvida em malha de tricô tecnológica (Knit), esta peça apresenta bordados florais de alta definição, unindo o conforto do 'loose fit' à sofisticação do 'business casual'. Sua estrutura elástica premium garante respirabilidade e um caimento impecável, transitando com facilidade entre o estilo casual e eventos sofisticados."
     },
