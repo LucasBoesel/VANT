@@ -1,0 +1,569 @@
+/* ================= HEADER ================= */
+header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 20px 60px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 2;
+}
+
+/* NAV */
+nav {
+    justify-self: center;
+    display: flex;
+    align-items: center;
+}
+
+nav a,
+.dropbtn {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #111;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    display: inline-block;
+    line-height: 1;
+}
+
+/* Hover unificado para os 3 itens principais */
+nav a:hover,
+.dropdown:hover .dropbtn {
+    border-bottom: 2px solid #111;
+}
+
+/* ================= DROPDOWN & SUBMENU ================= */
+.dropdown {
+    position: static; 
+    display: inline-flex; /* Garante que o hover só funcione em cima do texto */
+    align-items: center;
+}
+
+.dropdown-content {
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    z-index: 1;
+    padding: 30px 0;
+    justify-content: center;
+    gap: 50px;
+    /* Transição suave para sumir quando tirar o mouse */
+    transition: opacity 0.2s ease, visibility 0.2s ease; 
+}
+
+/* A PONTE: Preenche o espaço vazio entre o texto e o submenu */
+.dropdown-content::before {
+    content: "";
+    position: absolute;
+    top: -30px; 
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background: transparent;
+}
+
+/* GATILHO: Ativa o menu apenas no hover do texto coleções */
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    animation: fadeInSlide 0.3s ease;
+}
+
+/* LINKS DENTRO DO SUBMENU */
+.dropdown-content a {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    border-bottom: none !important;
+    transition: color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+    color: #777;
+    background: none;
+    border-bottom: none !important;
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* LOGO */
+.logo,
+a.logo {
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-family: 'Oswald', sans-serif;
+    color: #111;
+    text-decoration: none;
+    display: inline-block;
+    justify-self: start;
+}
+
+/* ================= ICONES ================= */
+.icons {
+    justify-self: end;
+    display: flex;
+    gap: 15px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.2s ease;
+    user-select: none;
+}
+
+.icon:hover {
+    opacity: 0.7;
+}
+
+.lupa-icon {
+    background-image: url("../Assets/img/icones/lupa.png");
+}
+
+.heart-icon {
+    background-image: url("../Assets/img/icones/coracao.png");
+}
+
+.list-icon {
+    background-image: url("../Assets/img/icones/listadedesejo.png");
+}
+
+.list-icon {
+    position: relative;
+    /* Essencial para o contador ficar preso ao ícone */
+}
+
+.cart-count {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    /* Centraliza o número em relação ao ícone */
+
+    color: #111;
+    /* Cor do número (preto para contrastar com a sacola branca/vazia) */
+    font-size: 10px;
+    /* Tamanho do número */
+    font-weight: 600;
+    /* Deixa o número bem visível */
+    font-family: 'Inter', sans-serif;
+
+    pointer-events: none;
+    display: none;
+}
+
+/* Classe para mostrar quando houver itens */
+.cart-count.active {
+    display: flex;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 380px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    transition: right 0.3s ease;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 25px 20px;
+}
+
+.close-sidebar {
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.sidebar-content {
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+/* ================= Whitelist ================= */
+
+.wishlist-link {
+    text-decoration: none;
+    color: #111;
+    display: block;
+    padding: 15px 20px;
+    transition: background-color 0.2s ease;
+}
+
+.wishlist-link:hover {
+    background-color: #f9f9f9;
+}
+
+.wishlist-item {
+    display: flex;
+    gap: 15px;
+    align-items: stretch;
+    /* Faz o info ocupar a altura total da imagem */
+}
+
+.wishlist-item img {
+    width: 80px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.wishlist-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    /* Isso joga o info-bottom para baixo no carrinho */
+    padding-right: 35px;
+}
+
+/* Ajuste específico para os Favoritos: Alinha tudo à esquerda */
+#wishlist-items .wishlist-info {
+    justify-content: flex-start;
+    align-items: flex-start; /* Força o alinhamento na esquerda */
+    gap: 4px;
+    padding-right: 10px;
+}
+
+/* Corrige a pilha de preços especificamente nos favoritos */
+#wishlist-items .product-price-stack {
+    align-items: flex-start !important; /* Move o preço antigo da direita para a esquerda */
+    margin-top: 4px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Garante que os preços individuais não tentem fugir para a direita */
+#wishlist-items .product-old-price,
+#wishlist-items .product-price {
+    align-self: flex-start;
+    text-align: left;
+}
+
+.cart-item-wrapper {
+    position: relative;
+    border-bottom: 1px solid #eee;
+}
+
+/* Nome do produto e tamanho no topo */
+.info-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.product-name {
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.2;
+    padding-right: 15px;
+}
+
+.product-size {
+    font-size: 12px;
+    color: #777;
+    margin: 4px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Quantidade e Preço na mesma linha embaixo */
+.info-bottom {
+    display: flex;
+    justify-content: space-between;
+    /* Quantidade na esquerda, Preço na direita */
+    align-items: flex-end;
+    /* Alinha ambos na base */
+    width: 100%;
+}
+
+/* Container que empilha o preço antigo em cima do novo */
+.product-price-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinha à direita para casar com o layout do carrinho */
+    gap: 2px;
+}
+
+/* Preço antigo (riscado e cinza) */
+.product-old-price {
+    font-size: 15px;
+    color: #666;
+    text-decoration: line-through;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    line-height: 1;
+}
+
+.product-price {
+    font-size: 15px;
+    color: #111;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* ================= MENSAGEM CARRINHO VAZIO ================= */
+.empty-msg {
+    text-align: center;
+    padding: 60px 20px;
+    color: #777;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* ================= MENSAGEM CARRINHO VAZIO ================= */
+.empty-msg {
+    text-align: center;
+    padding: 60px 20px;
+    color: #777;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* ================= CONTROLES ================= */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    background: #f1f1f1;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+}
+
+.quantity-control button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 2px 10px;
+    color: #333;
+}
+
+.quantity-control button:hover {
+    background: #e5e5e5;
+}
+
+.quantity-control span {
+    font-size: 13px;
+    font-weight: 600;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* Botão Remover (X) no Canto Superior Direito */
+.remove-item {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px !important;
+    color: #bbb !important;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.remove-item:hover {
+    color: #111 !important;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* ================= Footer Menu Carrinho ================= */
+.sidebar-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    margin-top: auto;
+    background: #fff;
+}
+
+.sidebar-footer div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+#cart-total-value {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Finalizar Compra Button */
+.checkout-btn {
+    width: 100%;
+    padding: 18px;
+    background: #111;
+    color: #fff;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    opacity: 0.8;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 9;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* ================= Barra de Pesquisa ================= */
+
+.search-bar-overlay {
+    position: fixed;
+    top: -120%;
+    /* Escondido acima */
+    left: 0;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    z-index: 11;
+    transition: top 0.10s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-bar-overlay.active {
+    top: 0;
+    /* Desce para o topo */
+}
+
+.search-bar-container {
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #111;
+}
+
+#main-search-input {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.close-search {
+    font-size: 40px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.search-results-dropdown {
+    width: 90%;
+    max-width: 800px;
+    background: #fff;
+    max-height: 450px;
+    overflow-y: auto;
+    display: none;
+}
+
+.search-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    text-decoration: none;
+    color: #111;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.search-item img {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.search-item-name {
+    font-weight: 600;
+    margin: 0;
+    font-size: 15px;
+    font-family: Montserrat;
+}
+
+.search-item-price {
+    color: #555;
+    margin: 5px 0 0;
+    font-size: 14px;
+    font-family: Inter;
+}

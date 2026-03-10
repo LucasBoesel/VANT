@@ -1,0 +1,483 @@
+/* ================= CONTAINER CENTRAL ================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin: 50px auto 0;
+}
+
+/* ================= PRODUTO ================= */
+.product-page {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    margin: 0 auto;
+}
+
+/* GALERIA */
+.product-gallery { 
+    display: flex;
+    gap: 20px;
+}
+
+.thumbnails {
+    display: flex;
+    flex-direction: column;
+    object-fit: cover;
+    gap: 12px;
+    align-items: center;
+}
+
+.thumbnails img {
+    width: 80px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: filter 0.25s ease;
+}
+
+/* hover e selecionada ficam mais escuras */
+.thumbnails img:hover,
+.thumbnails img.active {
+    filter: brightness(85%);
+}
+
+.main-image img {
+    width: 100%;
+    max-height: 700px;
+    object-fit: cover;
+    display: block;
+}
+
+/* INFO */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Caminho Produto */
+.breadcrumb {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #999;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: #111;
+}
+
+/* O último item (Nome do Produto) */
+.breadcrumb .current-product {
+    color: #333; /* Mais escuro que o resto */
+    font-weight: 600;
+}
+
+/* Nome Produto */
+.product-info h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+/* ================= PREÇOS E DESCONTO ================= */
+
+/* Mantém os preços alinhados horizontalmente */
+.product-price-container {
+    display: flex;
+    align-items: baseline; /* Alinha pela base do texto */
+    gap: 10px;            /* Espaço entre os preços */
+    margin-bottom: 5px;
+}
+
+/* Preço antigo: Apagado e Riscado */
+.old-price {
+    text-decoration: line-through;
+    color: #666;      /* Cinza apagado */
+    font-size: 18px;     /* Menor que o preço atual */
+    font-weight: 400;
+}
+
+/* Preço novo: Mantendo o estilo que você já tinha na classe .price */
+.current-price-discount {
+    font-size: 20px;     /* Tamanho original */
+    font-weight: 600;    /* Peso original */
+    color: #111;         /* Cor preta original */
+}
+
+.installments {
+    font-size: 14px;
+    color: #222;
+    margin-bottom:20px;
+}
+
+/* ================= SELETOR DE CORES ================= */
+.colors {
+    margin-bottom: 25px;
+}
+
+.colors span {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #111;
+}
+
+.color-options {
+    display: flex;
+    gap: 15px;
+}
+
+.color-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    padding: 0;
+    transition: border-color 0.2s ease;
+    background-clip: padding-box;
+    border: 1px solid transparent; /* Invisível nas outras cores */
+}
+
+/* HOVER: Borda cinza mais escura */
+.color-btn:hover {
+    border-color: #999; 
+}
+
+.color-btn.is-white {
+    border: 1px solid #ddd !important;  
+}
+
+/* SELECIONADO: Borda preta nítida (O !important resolve o problema do branco) */
+.color-btn.active {
+    border: 2px solid #111 !important; 
+}
+
+/* TAMANHOS */
+.sizes span {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.size-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    user-select: none;
+}
+
+.size-options button {
+    padding: 10px 18px;
+    border: 1px solid #111;
+    background: none;
+    cursor: pointer;
+}
+
+.size-options button:hover {
+    background: #111;
+    color: #fff;
+}
+
+/* Destaque para o tamanho selecionado */
+.size-options button.selected {
+    background-color: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+/* Pop-up  */
+.mini-cart-popup {
+    position: fixed;
+    top: 80px; 
+    right: 30px; /* Espaçamento equilibrado da borda */
+    width: 360px; /* O tamanho "perfeito" para desktop */
+    background: #fff;
+    padding: 25px; 
+    z-index: 10;
+    transform: translateX(120%);
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid #dddd;
+}
+
+/* Ajuste para o preço dentro do pop-up */
+.mini-cart-popup .product-price-stack {
+    display: flex;
+    flex-direction: column; /* Empilha o preço antigo em cima do novo */
+    align-items: flex-start; /* Alinha ambos na esquerda */
+    gap: 0px;               /* Diminui o espaço entre os dois preços */
+    margin-top: 5px;
+}
+
+.mini-cart-popup .product-old-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 16px !important;
+}
+
+.mini-cart-popup.show {
+    transform: translateX(0);
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; /* Aumentado */
+    font-weight: 600;
+    margin-bottom: 25px; /* Mais espaço */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.close-popup {
+    cursor: pointer;
+    font-size: 24px; /* Maior para facilitar o clique */
+    color: #111;
+    line-height: 1;
+}
+
+.popup-body {
+    display: flex;
+    gap: 20px; /* Mais espaço entre imagem e texto */
+    margin-bottom: 25px;
+}
+
+.popup-body img {
+    width: 85px; /* Foto com bom tamanho, sem exagerar */
+    height: 110px;
+    object-fit: cover;
+}
+
+.popup-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Garante que tudo comece na esquerda */
+    text-align: left;        /* Alinha o texto à esquerda */
+}
+
+.popup-info .p-name {
+    font-weight: 600;
+    font-size: 16px; /* Aumentado */
+    margin: 0 0 2px 0;
+    line-height: 1.2;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.popup-info .p-size {
+    font-size: 13px;
+    color: #777;
+    margin: 2px 0;
+}
+
+.popup-info .p-price {
+    font-weight: 600;
+    font-size: 16px; /* Aumentado */
+    margin-top: 5px;
+}
+
+.view-cart-btn {
+    width: 100%;
+    padding: 18px; /* Botão mais alto e imponente */
+    background: #111;
+    color: #fff;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px; /* Aumentado */
+    font-weight: 600;
+    letter-spacing: 2px; /* Mais espaçamento entre letras */
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+}
+
+.view-cart-btn:hover {
+    opacity: 0.8;
+}
+
+/* BOTÕES */
+.product-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+    align-items: center; /* Garante que fiquem alinhados pelo centro se as alturas variarem */
+}
+
+/* BOTÃO FAVORITO (PRIMEIRO) */
+.favorite-square-button {
+    width: 55px; 
+    height: 55px;
+    background: none;
+    border: 1px solid #777;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Mantém as imagens centralizadas uma sobre a outra */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.favorite-square-button img {
+    width: 20px;
+    height: 20px;
+    position: absolute; /* Sobreposição total */
+    transition: opacity 0.1s ease; /* Transição rápida para o clique */
+    pointer-events: none; /* Garante que a imagem não intercepte o clique do botão */
+}
+
+/* Estado Inicial (Sem hover, sem clique) */
+.favorite-square-button .icon-default {
+    opacity: 1; /* Coração Vazio visível */
+}
+
+.favorite-square-button .icon-hover {
+    opacity: 0; /* Coração Pintado escondido */
+}
+
+/* HOVER - APENAS ESTÉTICA DA BORDA (A imagem NÃO muda aqui) */
+.favorite-square-button:hover {
+    border-color: #111;
+    background-color: #f9f9f9;
+}
+
+/* ESTADO ATIVO (QUANDO CLICADO) */
+/* Aqui é onde a mágica acontece via a classe que seu header.js adiciona */
+.favorite-square-button.active .icon-default {
+    opacity: 0; /* Esconde o vazio */
+}
+
+.favorite-square-button.active .icon-hover {
+    opacity: 1; /* Mostra o pintado */
+}
+
+/* BOTÃO COMPRAR (DIMINUÍDO) */
+.buy-button {
+    width: 280px; /* Definimos um tamanho fixo para ele não ocupar a tela toda */
+    height: 55px; /* Mesma altura do favorito para simetria */
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    text-transform: uppercase;
+}
+
+.buy-button:hover {
+    opacity: 0.8;
+}
+
+/* TEXTO */
+.description {
+    margin-top: 40px;
+}
+
+.description h3 {
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 10px;
+}
+
+.product-img {
+    width: 200px;
+    /* ou tamanho que quiser */
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+
+/* ================= lightbox ================= */
+.lightbox {
+    display: none;
+    /* escondido inicialmente */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    overflow: hidden;
+    user-select: none;
+}
+
+.lightbox-img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    /* mantém proporção completa sem cortar */
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+.lightbox-number {
+    position: fixed;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 16px;
+    z-index: 3;
+}
+
+
+.lightbox-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    z-index: 3;
+    padding: 30px;
+}
+
+.lightbox-arrow.left {
+    left: 20px;
+}
+
+.lightbox-arrow.right {
+    right: 20px;
+}
+
+.lightbox-arrow:hover {
+    transform: translateY(-50%) scale(1.1);
+    /* leve aumento */
+}
+
+.close {
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 3;
+}

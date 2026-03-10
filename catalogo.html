@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo | VANT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;600;700&family=Oswald:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/catalogo.css">
+</head>
+
+<body>
+
+    <main class="catalogo-main">
+        <aside class="filters-sidebar">
+            <div class="breadcrumb" id="catalogBreadcrumb">
+                <a href="index.html">Início</a> / <span class="current-product">Catálogo</span>
+            </div>
+
+            <h2 id="page-title">Produtos</h2> 
+
+            <div class="filter-group">
+                <h3>Gênero</h3>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="gender" value="Masculino" id="check-masc">
+                    <span class="checkmark"></span> Masculino
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="gender" value="Feminino" id="check-fem">
+                    <span class="checkmark"></span> Feminino
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="gender" value="Unissex" id="check-unissex">
+                    <span class="checkmark"></span> Unissex
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Coleção</h3>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="collection" value="Vibe Tropical">
+                    <span class="checkmark"></span> Vibe Tropical
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="collection" value="VANT Essentials">
+                    <span class="checkmark"></span> VANT Essentials
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="collection" value="Original VANT">
+                    <span class="checkmark"></span> Original VANT
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Ofertas</h3>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="discount" value="true">
+                    <span class="checkmark"></span> Em Promoção
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Preço</h3>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="price" value="0-100">
+                    <span class="checkmark"></span> Até R$ 100
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="price" value="100-150">
+                    <span class="checkmark"></span> R$ 100 - R$ 150
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="price" value="150-9999">
+                    <span class="checkmark"></span> Acima de R$ 150
+                </label>
+            </div>
+        </aside>
+
+        <section class="products-container">
+            <div class="product-row" id="catalogGrid">
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/produtos-data.js"></script>
+    <script src="js/catalogo.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/base.js"></script>
+</body>
+
+</html>

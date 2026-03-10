@@ -1,0 +1,277 @@
+/* ================= ESTRUTURA GERAL ================= */
+.catalogo-main {
+    display: flex;
+    max-width: 1400px;
+    margin: 120px auto 50px; 
+    padding: 0 40px;
+}
+
+/* ================= FILTROS ================= */
+.filters-sidebar {
+    width: 220px;
+    padding-right: 40px;
+    flex-shrink: 0;
+}
+
+.filters-sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #111;
+}
+
+.filter-group {
+    margin-bottom: 30px;
+    border-top: 1px solid #ebebeb; /* Linha sutil separadora */
+    padding-top: 20px;
+}
+
+.filter-group:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.filter-group h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: #111;
+}
+
+/* CONTAINER DO CHECKBOX */
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    user-select: none;
+    color: #444; 
+    transition: color 0.3s ease;
+}
+
+.custom-checkbox:hover {
+    opacity: 0.8;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* O QUADRADO (Traço fino e limpo) */
+.checkmark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 18px;
+    width: 18px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Leve arredondado moderno */
+    transition: all 0.2s ease;
+}
+
+.custom-checkbox:hover input ~ .checkmark {
+    border-color: #757575;
+}
+
+/* QUANDO MARCADO: Fundo Preto */
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: #111;
+    border-color: #111;
+}
+
+/* O V DO CHECK */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.custom-checkbox .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Garante que o texto fique preto quando selecionado */
+.custom-checkbox input:checked ~ span {
+    color: #111;
+}
+
+/* ================= GRID DE PRODUTOS ================= */
+.products-container {
+    flex: 1;
+}
+
+.product-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 40px 24px;
+}
+
+/* ================= CARD DE PRODUTO ================= */
+.product-card {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f6f6f6; /* Fundo cinza claro para fotos sem fundo */
+}
+
+.product-image .img-main {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.4s ease;
+}
+
+.product-image .img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.product-card:hover .img-main {
+    opacity: 0;
+}
+
+.product-card:hover .img-hover {
+    opacity: 1;
+}
+
+/* TEXTOS DO CARD */
+.product-card p {
+    margin: 12px 0 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #111;
+}
+
+.product-card span {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #111; /* Preço mais sutil, estilo Nike */
+}
+
+/* Caminho Produto */
+.breadcrumb {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #999;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: #111;
+}
+
+/* O último item (Nome do Produto) */
+.breadcrumb .current-product {
+    color: #333; /* Mais escuro que o resto */
+    font-weight: 600;
+}
+
+/* ================= AJUSTES DE OFERTA E PREÇOS PROMO ================= */
+
+/* Etiqueta de Porcentagem Estilo Nike */
+.discount-tag {
+    position: absolute;
+    top: 0; /* Alinhado ao topo */
+    left: 0; /* Alinhado à esquerda */
+    background-color: #111; /* Preto sólido */
+    color: #fff;
+    padding: 6px 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; /* Aumentado levemente para legibilidade */
+    font-weight: 700;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    pointer-events: none;
+}
+
+/* Alinha os dois preços na mesma linha */
+.product-price-container {
+    display: flex;
+    align-items: center; /* Alinhamento vertical central */
+    gap: 8px;           /* Espaçamento entre os valores */
+    margin-top: 4px;
+}
+
+/* Preço antigo: apagado e riscado */
+.old-price-catalog {
+    text-decoration: line-through;
+    color: #666 !important;      /* Cinza apagado */
+    font-size: 18px;     /* Menor que o preço atual */
+    font-weight: 400;
+}
+
+/* Preço novo: mantém a cor e estilo do span original */
+.current-price-discount {
+    color: #111 !important; /* Mesma cor dos produtos sem desconto */
+    font-weight: 400 !important;
+}
+
+/* ================= RESPONSIVIDADE ================= */
+@media (max-width: 1100px) {
+    .product-row { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .catalogo-main { 
+        flex-direction: column; 
+        margin-top: 100px;
+        padding: 0 20px;
+    }
+    .filters-sidebar { 
+        width: 100%; 
+        padding-right: 0; 
+        margin-bottom: 40px; 
+    }
+    .product-row { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 30px 15px;
+    }
+}

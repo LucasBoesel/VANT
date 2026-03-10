@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camisa Floral Lótus Branca | VANT</title>
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/produto.css">
+</head>
+
+<body>
+
+    <!-- CONTAINER CENTRAL -->
+    <div class="container">
+        <main class="product-page">
+
+            <!-- GALERIA -->
+            <section class="product-gallery">
+                <div class="thumbnails"></div>
+
+                <div class="main-image">
+                    <img src="Assets/img/roupas/VibeTropical/CamisaFloralLotus/CamisaFloralLotus.png" id="mainImage" class="product-img">
+                </div>
+            </section>
+
+            <!-- INFORMAÇÕES -->
+            <section class="product-info">
+
+                <div class="breadcrumb" id="productBreadcrumb"></div>
+                <h1 id="productName">Camisa Azul Floral Lótus</h1>
+                
+                <div class="price product-price-container" id="productPrice">
+                    R$ 99,90
+                </div>
+                
+                <p class="installments" id="productInstallments"></p>
+            
+                <div class="colors">
+                    <span>Cor</span>
+                    <div class="color-options" id="colorOptions">
+                        </div>
+                </div>
+
+                <!-- TAMANHOS -->
+                <div class="sizes">
+                    <span>Tamanho</span>
+                    <div class="size-options">
+                        <button>P</button>
+                        <button>M</button>
+                        <button>G</button>
+                        <button>GG</button>
+                    </div>
+                </div>
+
+                <!-- BOTÕES -->
+                <div class="product-actions">
+                    <button class="favorite-square-button" aria-label="Adicionar aos favoritos">
+                        <img src="Assets/img/icones/coracao.png" class="icon-default" alt="Favoritar">
+                        <img src="Assets/img/icones/coracaopintado.png" class="icon-hover" alt="Favoritado">
+                    </button>
+                    <button class="buy-button">COMPRAR</button>
+                </div>
+
+                <!-- DESCRIÇÃO -->
+                <div class="description">
+                    <h3>Descrição</h3>
+                    <p id="productDescription">
+                        Camisa floral azul com estampa de lótus, confeccionada em tecido leve e respirável.
+                        Ideal para compor looks casuais e sofisticados em dias quentes.
+                    </p>
+                </div>
+            </section>
+
+            <!-- LIGHTBOX -->
+            <div id="lightbox" class="lightbox">
+                <img src="Assets/img/icones/x.png" class="close" alt="Fechar">
+
+                <span class="lightbox-arrow left">&lt;</span>
+                <span class="lightbox-arrow right">&gt;</span>
+
+                <div class="lightbox-number" id="lightbox-number"></div>
+                <img class="lightbox-img" id="lightbox-img" alt="Imagem do produto">
+            </div>
+
+        </main>
+    </div>
+
+    <div id="footer-placeholder" class="footer-produto-page"></div>
+
+    <script src="js/produtos-data.js"></script>
+    <script src="js/produto.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/base.js"></script>
+
+
+</body>
+
+</html>
