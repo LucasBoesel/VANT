@@ -1,6 +1,6 @@
 # VANT | E-commerce Concept
 
-![VANT](Assets/img/vant.png)
+![VANT](Assets/img/VANT.PNG)
 
 > Minimalist Streetwear Store. Focada em uma experiência de usuário fluida, estética "high-end" e performance visual.
 
@@ -8,13 +8,13 @@
 
 ## 📍 Índice
 
-* [Sobre o Projeto](#-sobre-o-projeto)
+* [⚡ Sobre o Projeto](#-sobre-o-projeto)
 * [🌐 Acesso Online](#-acesso-online)
-* [Funcionalidades Principais](#-funcionalidades-principais)
-* [Tecnologias Utilizadas](#-tecnologias-utilizadas)
-* [Estrutura de Pastas](#-estrutura-de-pastas)
-* [Licença](#-licença)
-* [Autores](#-autores)
+* [🚀 Funcionalidades Principais](#-funcionalidades-principais)
+* [🛠️ Tecnologias Utilizadas](#️-tecnologias-utilizadas)
+* [📂 Estrutura de Pastas](#-estrutura-de-pastas)
+* [📝 Licença](#-licença)
+* [👥 Autores](#-autores)
 
 ---
 
@@ -51,6 +51,7 @@ O projeto foi construído utilizando o conceito de **Vanilla Web Development**, 
 
 ## 📂 Estrutura de Pastas
 
+```text
 VANT/
 ├── Assets/
 │   ├── img/
@@ -69,14 +70,15 @@ VANT/
 │   ├── header.js       # Controle do menu
 │   ├── index.js        # Lógica do carrossel e seção Novidades
 │   ├── produto.js      # Scripts da página do produto
-│   └── produtos-data.js # Estrutura central de dados (JSON) que gerencia todo o inventário.
+│   └── produtos-data.js # Estrutura central de dados (JSON) que gerencia todo o inventário
 ├── catalogo.html       # Página de listagem e filtros
 ├── index.html          # Ponto de entrada (Home)
 └── produto.html        # Página de exibição de produto individual
+```
 
 ## 📝 Licença
 
-Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
 ## 👥 Autores
 
