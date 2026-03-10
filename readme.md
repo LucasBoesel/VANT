@@ -26,7 +26,7 @@ O **VANT** é um projeto de e-commerce de moda (streetwear/lifestyle) desenvolvi
 
 ## 🌐 Acesso Online
 
-Você pode acessar o site diretamente aqui: **[Clique aqui para visitar o site](SEU_LINK_AQUI)**
+Você pode acessar o site diretamente aqui: **[Clique aqui para visitar o site](https://lucasboesel.github.io/VANT/)**
 
 ---
 
